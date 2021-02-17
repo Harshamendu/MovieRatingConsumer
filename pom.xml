@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.2</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.harsha</groupId>
+	<artifactId>movieRatingConsumer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MovieRatingConsumer</name>
+	<description>Movie rating can be complex based on volume of data received, so using kafka with spark</description>
+	<properties>
+		<java.version>11</java.version>
+		<spark.version>3.0.1</spark.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.12</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_2.12</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming-kafka-0-10_2.12</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-pmd-plugin</artifactId>
+			<version>3.13.0</version>
+			<configuration>
+				<source>11</source>  <!-- same as <java.version> -->
+				<target>11</target>    <!-- same as <java.version> -->
+			</configuration>
+			<dependencies>
+				<dependency>
+					<groupId>net.sourceforge.pmd</groupId>
+					<artifactId>pmd-core</artifactId>
+					<version>6.29.0</version>
+				</dependency>
+				<dependency>
+					<groupId>net.sourceforge.pmd</groupId>
+					<artifactId>pmd-java</artifactId>
+					<version>6.29.0</version>
+				</dependency>
+			</dependencies>
+		</plugin>
+	</plugins>
+</build>
+
+</project>
