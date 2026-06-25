@@ -23,7 +23,7 @@ public class KafkaConsumerConfig {
 
 	    private static final String AUTO_OFFSET_RESET_CONFIG = "earliest";
 
-	    private static final String CLIENT_ID = "earliest";
+	    private static final String CLIENT_ID = "movie-rating-consumer";
 
 	    private final KafkaPropertiesConfig kafkaProperties;
 
@@ -61,4 +61,3 @@ public class KafkaConsumerConfig {
 	        factory.setConsumerFactory(consumerFactory());
 	        return factory;
 	    }
-}
