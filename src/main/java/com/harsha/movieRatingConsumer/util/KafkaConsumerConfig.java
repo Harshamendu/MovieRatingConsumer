@@ -23,7 +23,7 @@ public class KafkaConsumerConfig {
 
 	    private static final String AUTO_OFFSET_RESET_CONFIG = "earliest";
 
-	    private static final String CLIENT_ID = "movie-rating-consumer";
+	    private static final String CLIENT_ID = "latest";
 
 	    private final KafkaPropertiesConfig kafkaProperties;
 
